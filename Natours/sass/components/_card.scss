@@ -26,6 +26,20 @@
           $color-secondary-light
         );
       }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary,
+          $color-primary-light
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary,
+          $color-tertiary-light
+        );
+      }
     }
   }
 
@@ -50,10 +64,20 @@
         url(../../img/nat-5.jpg);
     }
     &--2 {
-      background-image: url(../../img/nat-6.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary,
+          $color-primary-light
+        ),
+        url(../../img/nat-6.jpg);
     }
     &--3 {
-      background-image: url(../../img/nat-7.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary,
+          $color-tertiary-light
+        ),
+        url(../../img/nat-7.jpg);
     }
   }
 
@@ -78,13 +102,27 @@
         rgba($color-secondary-light, 0.85)
       );
     }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary, 0.85),
+        rgba($color-primary-light, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary, 0.85),
+        rgba($color-tertiary-light, 0.85)
+      );
+    }
   }
   &_details {
     ul {
-      padding:3rem;  
+      padding: 3rem;
       list-style: none;
       width: 80%;
-      margin:0 auto;
+      margin: 0 auto;
       li {
         text-align: center;
         font-size: 1.5rem;
@@ -95,5 +133,26 @@
         }
       }
     }
+  }
+  &_cta {
+    width: 90%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &_price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  &_price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &_price-value {
+    font-size: 6rem;
+    text-transform: uppercase;
   }
 }
