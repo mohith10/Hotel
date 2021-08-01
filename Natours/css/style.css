@@ -215,10 +215,10 @@ body {
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  height: 50rem;
+  height: 52rem;
   position: relative; }
   .card_side {
-    height: 50rem;
+    height: 52rem;
     width: 100%;
     transition: all 0.8s ease-in;
     position: absolute;
@@ -226,22 +226,59 @@ body {
     left: 0;
     backface-visibility: hidden;
     border-radius: 3px;
+    overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card_side--front {
-      background-color: white;
-      color: white; }
+      background-color: white; }
     .card_side--back {
       transform: rotateY(180deg); }
       .card_side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
   .card:hover .card_side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card_side--back {
     transform: rotateY(0deg); }
+  .card_picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card_picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../../img/nat-5.jpg); }
+    .card_picture--2 {
+      background-image: url(../../img/nat-6.jpg); }
+    .card_picture--3 {
+      background-image: url(../../img/nat-7.jpg); }
+  .card_heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card_heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone; }
+    .card_heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card_details ul {
+    padding: 3rem;
+    list-style: none;
+    width: 80%;
+    margin: 0 auto; }
+    .card_details ul li {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem; }
+      .card_details ul li:not(:last-child) {
+        border-bottom: 1px solid #eee; }
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
