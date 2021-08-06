@@ -1,0 +1,32 @@
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.6rem;
+
+  &_list {
+    list-style: none;
+  }
+  &_item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+  &_link {
+    &:link,
+    &:visited {
+      color: #f7f7f7;
+      background-color: #333;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black,0.4);
+      transform: rotate(-5deg) scale(1.3);
+    }
+  }
+}
