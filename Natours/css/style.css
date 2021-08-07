@@ -529,7 +529,10 @@ body {
   top: 6rem;
   right: 6rem;
   border-radius: 50%;
-  z-index: 2000; }
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
 
 .navigation_background {
   height: 6rem;
@@ -540,7 +543,7 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#55c57a, #28b485);
   z-index: 1000;
-  transform: scale(80); }
+  transition: all 0.5s cubic-bezier(0.83, 0, 0.17, 1); }
 
 .navigation_nav {
   height: 100vh;
@@ -548,11 +551,15 @@ body {
   position: fixed;
   top: 0%;
   right: 0%;
-  z-index: 1500; }
+  z-index: 1500;
+  opacity: 0;
+  width: 0%;
+  transition: all 0.5s; }
 
 .navigation_list {
   position: absolute;
   top: 50%;
+  width: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
@@ -577,6 +584,48 @@ body {
   background-position: 100%;
   color: #28b485;
   transform: translateX(1rem); }
+
+.navigation_checkbox:checked ~ .navigation_background {
+  transform: scale(80); }
+
+.navigation_checkbox:checked ~ .navigation_nav {
+  opacity: 1;
+  width: 100%; }
+
+.navigation_icon {
+  position: relative;
+  margin-top: 3.5rem; }
+  .navigation_icon, .navigation_icon::before, .navigation_icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block; }
+  .navigation_icon::before, .navigation_icon::after {
+    content: "";
+    position: absolute;
+    left: 0%;
+    transition: all 0.2s; }
+  .navigation_icon::before {
+    top: -0.8rem; }
+  .navigation_icon::after {
+    top: 0.8rem; }
+
+.navigation_button:hover .navigation_icon::after {
+  top: 1rem; }
+
+.navigation_button:hover .navigation_icon::before {
+  top: -1rem; }
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon {
+  background-color: transparent; }
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon::after {
+  top: 0%;
+  transform: rotate(-135deg); }
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon::before {
+  top: 0%;
+  transform: rotate(135deg); }
 
 .section-about {
   background-color: #f7f7f7;
