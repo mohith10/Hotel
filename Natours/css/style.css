@@ -539,7 +539,8 @@ body {
   top: 6.5rem;
   right: 6.5rem;
   background-image: radial-gradient(#55c57a, #28b485);
-  z-index: 1000; }
+  z-index: 1000;
+  transform: scale(80); }
 
 .navigation_nav {
   height: 100vh;
@@ -556,6 +557,26 @@ body {
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center; }
+
+.navigation_item {
+  margin: 1rem; }
+
+.navigation_link:link, .navigation_link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 230%;
+  transition: all 0.4s; }
+
+.navigation_link:hover, .navigation_link:active {
+  background-position: 100%;
+  color: #28b485;
+  transform: translateX(1rem); }
 
 .section-about {
   background-color: #f7f7f7;
