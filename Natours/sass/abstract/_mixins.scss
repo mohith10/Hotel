@@ -1,9 +1,46 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
-@mixin clearfix{
-    &::after{
-        content: "";
-        display: table;
-        clear: both;
+/*
+Range:
+0-600 -Phone
+600-900 Tab
+900-1200- Landscape Tab
+[1200-1800] - Normal style i.e without any media query
+>1800px bigdesktop
+*/
+//We use EM coz REM fails here
+
+// Order -> Base > Typography > Layout + grid > Page Layout >  Components 
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
     }
+  }
 
+  @if $breakpoint == tab-port {
+    //900px
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    //1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    //1800
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
 }
